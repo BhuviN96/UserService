@@ -9,12 +9,14 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.List;
+
 public class UserGetDTO {
         private Long userId;
         private String name;
         private String email;
         private String mobileNumber;
-        private BookDTO borrowedBooks;
+        private List<IssuedBooksGetDTO> borrowedBooks;
 
         public UserGetDTO(Long userId, String name, String email, String mobileNumber) {
                 this.userId = userId;
@@ -55,11 +57,11 @@ public class UserGetDTO {
                 this.mobileNumber = mobileNumber;
         }
 
-        public BookDTO getBorrowedBooks() {
+        public List<IssuedBooksGetDTO> getBorrowedBooks() {
                 return borrowedBooks;
         }
 
-        public void setBorrowedBooks(BookDTO borrowedBooks) {
+        public void setBorrowedBooks(List<IssuedBooksGetDTO> borrowedBooks) {
                 this.borrowedBooks = borrowedBooks;
         }
 }

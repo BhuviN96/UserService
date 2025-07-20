@@ -1,7 +1,13 @@
 package com.LibraryManagement.UserService.DTO;
 
-import java.time.LocalDate;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.time.LocalDate;
+@Setter
+@Getter
+@Data
 public class BookDTO {
     private String name;
     private String description;
@@ -47,5 +53,16 @@ public class BookDTO {
 
     public void setPublishedDate(LocalDate publishedDate) {
         this.publishedDate = publishedDate;
+    }
+
+    @Override
+    public String toString() {
+        return "BookDTO{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", author='" + author + '\'' +
+                ", publisher='" + publisher + '\'' +
+                ", publishedDate=" + publishedDate +
+                '}';
     }
 }
